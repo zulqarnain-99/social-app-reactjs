@@ -8,11 +8,22 @@ import {BrowserRouter, Switch, Route} from "react-router-dom"
 
 function Main() {
   return (
-    <>
+    <BrowserRouter>
     <Header />
-    <About />
-    <Footer/>
-    </>
+    <Switch>
+      <Route path="/" exact>
+        <HomeGuest />
+      </Route>
+
+      <Route path="/about-us">
+        <About />
+      </Route>
+      <Route path="/terms">
+        <Term />
+      </Route>
+    </Switch>
+    <Footer/> 
+    </BrowserRouter>
   );
 }
 
